@@ -1,4 +1,4 @@
-with open("AdventOfCode\input\Day2.txt") as file:
+with open("AdventOfCode\/2022\input\Day2.txt") as file:
     l = [x for x in file.read().split('\n')]
 
 

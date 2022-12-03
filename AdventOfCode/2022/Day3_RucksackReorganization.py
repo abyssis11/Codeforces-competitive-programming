@@ -1,4 +1,4 @@
-with open("AdventOfCode\input\Day3.txt") as file:
+with open("AdventOfCode\/2022\input\Day3.txt") as file:
     l = [x for x in file.read().split('\n')]
 
 priorites = '0abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'

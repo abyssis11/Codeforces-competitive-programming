@@ -1,7 +1,7 @@
 acc = []
 acc2 = []
 #added 2 blank lines at the end of .txt file
-with open("AdventOfCode\input\Day1.txt") as file:
+with open("AdventOfCode\/2022\input\Day1.txt") as file:
     for line in file:
         l=line.rstrip()
         if l != '':
