@@ -18,21 +18,32 @@ for s in l1:
             stacks[s.index(l)]+=l
             s=s.replace(l,' ',1)
 
-stacks=[x for x in stacks if x != '']
-a=0
-for s in l2:
-    acc = 0
-    a+=1
-    r=''
-    if int(s[0]) > len(stacks[int(s[1])-1]):
-        num=len(stacks[int(s[1])-1])
-    else:
+def p1():
+    stack1=[x for x in stacks if x != '']
+    for s in l2:
+        acc = 0
+        r=''
         num = int(s[0])
-    for i in range(num):
-        
-        stacks[int(s[2])-1] = stacks[int(s[1])-1][acc] + stacks[int(s[2])-1]
-        r+=stacks[int(s[1])-1][acc]
-        acc+=1
-    stacks[int(s[1])-1]=stacks[int(s[1])-1].replace(r,'',1) #PAZI!!!!!!!!! samo jedanput brisemo
+        for i in range(num):  
+            stack1[int(s[2])-1] = stack1[int(s[1])-1][acc] + stack1[int(s[2])-1]
+            r+=stack1[int(s[1])-1][acc]
+            acc+=1
+        stack1[int(s[1])-1]=stack1[int(s[1])-1].replace(r,'',1) #PAZI!!!!!!!!! samo jedanput brisemo
 
-print(''.join([x[0] for x in stacks if len(x)]))
+    print(''.join([x[0] for x in stack1 if len(x)]))
+
+def p2():
+    stack1=[x for x in stacks if x != '']
+    for s in l2:
+        r=''
+        num = int(s[0])-1
+        while(num>-1): 
+            stack1[int(s[2])-1] = stack1[int(s[1])-1][num] + stack1[int(s[2])-1]
+            r+=stack1[int(s[1])-1][num]
+            num-=1
+        stack1[int(s[1])-1]=stack1[int(s[1])-1].replace(r[::-1],'',1) 
+
+    print(''.join([x[0] for x in stack1 if len(x)]))
+
+p1()
+p2()
